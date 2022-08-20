@@ -1,0 +1,137 @@
+d -> Represents the day of the month as a number
+dd -> Represents the day of the month as a number with leading zero
+_d -> Represents the day of the month as a number with space-hided leading zero
+dds-> Represents the short abbreviated name of the day (Mn, Ts, Wd etc).
+ddd-> Represents the abbreviated name of the day (Mon, Tue, Wed etc).
+dddd-> Represents the full name of the day (Monday, Tuesday etc).
+
+h 12-hour clock hour (e.g. 4).
+hh 12-hour clock, with a leading zero (e.g. 06)
+_h 12-hour clock, with a space-hided leading zero
+
+H 24-hour clock hour (e.g. 15)
+HH 24-hour clock hour, with a leading 0 (e.g. 22)
+_H 24-hour clock hour, with a space-hided leading zero
+
+m Minutes
+mm Minutes with a leading zero
+_m Minutes with a space-hided leading zero
+
+M Month number(eg.3)
+MM Month number with leading zero(eg.04)
+_M Month number with a space-hided leading zero
+
+MMS Abbreviated short Month Name (e.g. Dc)
+MMM Abbreviated Month Name (e.g. Dec)
+MMMM Full month name (e.g. December)
+
+s Seconds
+ss Seconds with leading zero
+_s Seconds with a space-hided leading zero
+
+t Abbreviated AM / PM (e.g. A or P)
+tt AM / PM (e.g. AM or PM
+
+y Year, no leading zero (e.g. 2105 would be 5)
+yy Year, leadin zero (e.g. 2005 would be 05)
+_y Year, a space-hided leading zero
+yyy Year, (e.g. 2105)
+yyyy Year, (e.g. 2105)
+
+z represents the signed offset of the local operating system's time zone (e.g. +6)
+zz As z, but with leading zero (e.g. +06)
+
+f Represents the most significant digit of the seconds fraction; that is, it represents the tenths of a second in a date and time value.
+ff Represents the two most significant digits of the seconds fraction in date and time
+fff Represents the three most significant digits of the seconds fraction; that is, it represents the milliseconds in a date and time value.
+
+%_sth2 -> signed (only minus) thermo aligned 2 digits
+%_Sth2 -> signed (minus or plus) thermo aligned 2 digits
+
+%ths -> Thermo sign (only minus)
+%th_s -> Thermo sign (only minus or space)
+%thS -> Thermo sign (minus or plus)
+%th_S -> Thermo sign (minus or plus or space)
+%thm2 -> Thermo module value 2 digits
+%thm2p1 -> Thermo module value 3 digits (1 for integer)
+%thm2p2 -> Thermo module value 4 digits (2 for integer)
+%grad -> gradus character
+
+_______|Ext+_______|Int+_______|Matrix________________________________________
++28oC  |V+28oC      |V+28o       |V28oC
++08oC  |V+08oC      |V+08o       |V08oC
++8oC   |V+8oC_      |V+8oC       |V8oC
+ 00oC  |V 00oC      |V_00o       |V00oC
+ 0oC   |V 0oC_      |V_0oC       |V0oC
+-05oC  |V-05oC      |V-05o       |V-05o
+-5oC   |V-5oC_      |V-5oC       |V-5oC
+-15oC  |V-15oC      |V-15o       |V-15o
+
+
+Для теста требуется на STM32F1xx контр. + ЧЭ (желательно с внешн. плюсом) сделать видео из 6-ти ситуаций (т.е. видео можно делать непрерывным, но комментировать, что было включено или какие кнопки на ДУ нажимаются).
+Нужно войти в меню выбора режима термо.
+By defaults, это режим без плюса (матр. ЧЭ). "+" на ДУ будет по циклу переключать:
+-без плюса (матр. ЧЭ);
+-внешн. плюс;
+-внутр. плюс.
+
+Собственно тест:
+-войти в меню выбора режима термо;
+-в режиме без плюса показать поведение на экране для всех ситуаций (полож/отр темпер.). Т.е. пусть пройдет 1-2 цикла отображения всех ситуаций;
+-то же самое в режиме с внешн. плюсом;
+-то же самое в режиме с внутр. плюсом;
+
+-войти в серв. меню и включить отображение незначащих нулей и прогнать пред. три теста.
+Возможно даже ты обнаружишь какие-то ошибки. Но, согласно исходникам во всех режимах знак +/- не отрывается от значения, а знак градуса с цельсием добавляется, если есть куда добавлять.
+
+
+%pr3 -> Pressure 3 digits
+%hum2 -> Humidity 2 digits
+%hum2p1 -> Humidity 3 digits (1 for integer)
+
+         HTML TXT
+Replace  '+'  ' '
+
+ !"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
+Do not replace '*' '-' '.' '_'
+ !"#$%&'()+,/:;<=>?@[\]^`{|}~
+
+Ignore '\"'
+
+20 space 	Space
+21 ! 	Exclamation mark
+22 " 	Double quote
+23 # 	Number
+24 $ 	Dollar sign
+25 % 	Percent
+26 & 	Ampersand
+27 ' 	Single quote
+28 ( 	Left parenthesis
+29 ) 	Right parenthesis
+2A * 	Asterisk
+2B + 	Plus
+2C , 	Comma
+2D - 	Minus
+2E . 	Period
+2F / 	Slash
+
+3A : 	Colon
+3B ; 	Semicolon
+3C < 	Less than
+3D = 	Equality sign
+3E > 	Greater than
+3F ? 	Question mark
+40 @ 	At sign
+
+5B [ 	Left square bracket
+5C \ 	Backslash
+5D ] 	Right square bracket
+5E ^ 	Caret / circumflex
+5F _ 	Underscore
+60 ` 	Grave / accent
+
+7B { 	Left curly bracket
+7C | 	Vertical bar
+7D } 	Right curly bracket
+7E ~ 	Tilde
+

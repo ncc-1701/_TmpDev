@@ -1,0 +1,4 @@
+Div 	CK_Frqu W_Spd 	R_Spd
+0		24MHg	115		100-200
+4		7.9MHg	100		150-400
+8		4.8MHg	91		100-250

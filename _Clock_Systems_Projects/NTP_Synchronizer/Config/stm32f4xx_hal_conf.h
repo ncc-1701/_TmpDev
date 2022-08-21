@@ -35,10 +35,6 @@ enum
 #define HAL_TICK_TIM_IRQn 			TIM7_IRQn
 #define HAL_TICK_TIM_IRQHandler 	TIM7_IRQHandler
 
-/* DAC for sound processing peripheral configuration ------------------------ */
-#define HAL_DMA_MODULE_ENABLED
-#define HAL_DAC_MODULE_ENABLED
-
 /* UI (buttons and LEDs) peripheral ------------------------------------------*/
 /* Buttons */
 #define BUTTON_RESET_GPIO_PIN 		GPIO_PIN_10

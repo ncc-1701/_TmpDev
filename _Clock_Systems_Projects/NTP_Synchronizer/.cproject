@@ -48,9 +48,9 @@
 							<tool command="${cross_prefix}${cross_c}${cross_suffix}" commandLinePattern="${COMMAND} ${cross_toolchain_flags} ${FLAGS} -c ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.1769479147" name="Cross ARM GNU Assembler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler">
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor.577983399" name="Use preprocessor" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths.916565774" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs.767059767" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="DEBUG"/>
@@ -75,20 +75,20 @@
 									<listOptionValue builtIn="false" value="&quot;../../Html/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../NTP_Synchronizer_Common/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../NTP_Synchronizer_Common/Html/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Audio/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Button/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Displays/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Eth_HTML/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Eth_HTML/Html_Common/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Inputs/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/IR/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/MCU/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/RTC/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Weather_Sensors/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Utils/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Audio/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Button/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Displays/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Eth_HTML/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Eth_HTML/Html_Common/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Inputs/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/IR/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/MCU/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/RTC/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Weather_Sensors/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Utils/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../Middlewares/FreeRTOS/Source/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../Middlewares/FreeRTOS/Source/portable/GCC/ARM_CM3&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../Middlewares/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/include&quot;"/>
@@ -210,9 +210,9 @@
 							<tool command="${cross_prefix}${cross_c}${cross_suffix}" commandLinePattern="${COMMAND} ${cross_toolchain_flags} ${FLAGS} -c ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} ${INPUTS}" errorParsers="org.eclipse.cdt.core.GASErrorParser;org.eclipse.cdt.core.GCCErrorParser" id="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler.1646956808" name="Cross ARM GNU Assembler" superClass="ilg.gnuarmeclipse.managedbuild.cross.tool.assembler">
 								<option id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor.20195850" name="Use preprocessor" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.usepreprocessor" useByScannerDiscovery="false" value="true" valueType="boolean"/>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths.414147840" name="Include paths (-I)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.include.paths" useByScannerDiscovery="false" valueType="includePath">
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
 								</option>
 								<option IS_BUILTIN_EMPTY="false" IS_VALUE_EMPTY="false" id="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs.1247907279" name="Defined symbols (-D)" superClass="ilg.gnuarmeclipse.managedbuild.cross.option.assembler.defs" useByScannerDiscovery="false" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="HSE_VALUE=8000000"/>
@@ -227,20 +227,20 @@
 									<listOptionValue builtIn="false" value="&quot;../../Html/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../NTP_Synchronizer_Common/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../NTP_Synchronizer_Common/Html/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Drivers/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Audio/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Button/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Displays/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Eth_HTML/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Eth_HTML/Html_Common/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Inputs/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/IR/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/MCU/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/RTC/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Weather_Sensors/inc&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;../../../Libraries/Utils/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/cmsis&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../STM_Libraries/STM32F4xx_HAL_Lib/inc/stm32f4xx&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Audio/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Button/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Displays/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Eth_HTML/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Eth_HTML/Html_Common/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Inputs/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/IR/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/MCU/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/RTC/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Weather_Sensors/inc&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;../../../User_Libraries/Utils/inc&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../Middlewares/FreeRTOS/Source/include&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../Middlewares/FreeRTOS/Source/portable/GCC/ARM_CM3&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;../../../Middlewares/FreeRTOS-Plus/Source/FreeRTOS-Plus-TCP/include&quot;"/>

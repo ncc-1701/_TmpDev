@@ -37,7 +37,7 @@
 		<link>
 			<name>Html_Common</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/Eth_HTML/Html_Common</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/Eth_HTML/Html_Common</locationURI>
 		</link>
 		<link>
 			<name>Html_NTP_Synchronizer_Common</name>
@@ -57,7 +57,7 @@
 		<link>
 			<name>STM32F4xx_HAL_Lib</name>
 			<type>2</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Drivers/STM32F4xx_HAL_Lib</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/STM_Libraries/STM32F4xx_HAL_Lib</locationURI>
 		</link>
 		<link>
 			<name>Drivers/TRS_sync_proto_hal_driver.c</name>
@@ -122,7 +122,7 @@
 		<link>
 			<name>src/main.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/MCU/Drivers_F4x/main_HAL_FreeRTOS.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/MCU/Drivers_F4x/main_HAL_FreeRTOS.c</locationURI>
 		</link>
 		<link>
 			<name>src/main_app.c</name>
@@ -147,7 +147,7 @@
 		<link>
 			<name>Libraries/Button/button.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/Button/src/button.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/Button/src/button.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/Eth_HTML/Drivers</name>
@@ -157,17 +157,17 @@
 		<link>
 			<name>Libraries/Eth_HTML/UDP_logging.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/Eth_HTML/src/UDP_logging.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/Eth_HTML/src/UDP_logging.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/Eth_HTML/html_txt_funcs.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/Eth_HTML/src/html_txt_funcs.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/Eth_HTML/src/html_txt_funcs.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/Eth_HTML/web-server_HTTP_FTP.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/Eth_HTML/src/web-server_HTTP_FTP.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/Eth_HTML/src/web-server_HTTP_FTP.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/FLASH/Drivers</name>
@@ -182,27 +182,27 @@
 		<link>
 			<name>Libraries/RTC/rtc.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/RTC/src/rtc.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/RTC/src/rtc.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/Utils/printf_uart_hal_driver.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/Utils/src/Drivers_F4x/printf_uart_hal_driver.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/Utils/src/Drivers_F4x/printf_uart_hal_driver.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/Eth_HTML/Drivers/eth_if_hal_driver.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/Eth_HTML/Drivers_F4x/eth_if_hal_driver.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/Eth_HTML/Drivers_F4x/eth_if_hal_driver.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/FLASH/Drivers/settings_NV_manager_flash_hal_driver.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/FLASH/Drivers_F4x/settings_NV_manager_flash_hal_driver.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/FLASH/Drivers_F4x/settings_NV_manager_flash_hal_driver.c</locationURI>
 		</link>
 		<link>
 			<name>Libraries/RTC/Drivers/rtc_hal_driver.c</name>
 			<type>1</type>
-			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/Libraries/RTC/src/Drivers_F4x/rtc_hal_driver.c</locationURI>
+			<locationURI>$%7BPARENT-2-PROJECT_LOC%7D/User_Libraries/RTC/src/Drivers_F4x/rtc_hal_driver.c</locationURI>
 		</link>
 	</linkedResources>
 	<filteredResources>

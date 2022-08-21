@@ -3,7 +3,7 @@
 #define _SETTINGS_H_
 
 /* Hardware supporting:
- * NTP_Synchronizer_V1.0 */
+NTP_Synchronizer_V1.0 */
 
 /* OUR CONFIGE -------------------------------------------------------------- */
 /* General settings ----------------------------------------------------------*/
@@ -41,7 +41,7 @@
 #define configDNS_ADDR3				configGW_ADDR3
 
 /* HTTP settings -------------------------------------------------------------*/
-#define MAX_HTTP_CLIENTS_CONN 		3// 2// 4//
+#define MAX_HTTP_CLIENTS_CONN 		4
 
 /* Logging settings ----------------------------------------------------------*/
 #define MAX_UDP_LOG_MSG_SIZE 		64

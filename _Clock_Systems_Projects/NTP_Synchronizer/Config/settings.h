@@ -60,7 +60,7 @@ NTP_Synchronizer_V1.0 */
 #define SNTP_ACTUAL_TIME_TIMEOUT 	(30*60)//10//
 
 /* Hardware configuration --------------------------------------------------- */
-#define MCU_MAX_PERFORMANCE//MCU_MIDDLE_PERFORMANCE//MCU_HIGH_PERFORMANCE//
+#define MCU_MIDDLE_PERFORMANCE//MCU_MAX_PERFORMANCE//MCU_HIGH_PERFORMANCE//
 #define WATCH_DOG_RELOAD_PERIOD 	16000
 
 /* DEBUGGING ---------------------------------------------------------------- */

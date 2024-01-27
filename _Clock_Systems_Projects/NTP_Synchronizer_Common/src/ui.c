@@ -33,6 +33,12 @@
 #	define HOLD_RESET_BUTTON_TIMEOUT 	5000
 #endif /*HOLD_RESET_BUTTON_TIMEOUT*/
 
+/* FreeRTOS constants */
+#ifndef UI_TASK_PRIORITY
+#	define UI_TASK_PRIORITY				(tskIDLE_PRIORITY + 2)
+#endif /*UI_TASK_PRIORITY*/
+#define UI_TASK_STACK_SIZE			(configMINIMAL_STACK_SIZE)
+
 /* LED indication constants */
 enum LED_State
 {
@@ -43,12 +49,6 @@ enum LED_State
 };
 
 #define FLASHING_PERIOD				500
-
-/* FreeRTOS constants */
-#ifndef UI_TASK_PRIORITY
-#	define UI_TASK_PRIORITY				(tskIDLE_PRIORITY + 2)
-#endif /*UI_TASK_PRIORITY*/
-#define UI_TASK_STACK_SIZE			(configMINIMAL_STACK_SIZE)
 
 /* Other constants -----------------------------------------------------------*/
 /* DEBUGGING -----------------------------------------------------------------*/
@@ -118,84 +118,84 @@ static void UI_Task()
 
 			/* Set first time */
 			IO_TimeOut = time;
-			return;
 		}
-		if((time - IO_TimeOut) < BUTTONS_SAMPLE_PERIOD) return;
-
-		/* Change timeout */
-		IO_TimeOut += BUTTONS_SAMPLE_PERIOD;
-
-		/* Buttons service ---------------------------------------------------*/
-		/* Call driver functions for buttons */
-		SetHoldButtonState(&m_ResetButton,  GetResetButtonState());
-
-		/* Buttons service ---------------------------------------------------*/
-		/* Reset button service */
-		if(HoldButtonIsPressed(&m_ResetButton))
+		if((time - IO_TimeOut) >= BUTTONS_SAMPLE_PERIOD)
 		{
+			/* Change timeout */
+			IO_TimeOut += BUTTONS_SAMPLE_PERIOD;
+
+			/* Buttons service -----------------------------------------------*/
+			/* Call driver functions for buttons */
+			SetHoldButtonState(&m_ResetButton,  GetResetButtonState());
+
+			/* Buttons service -----------------------------------------------*/
+			/* Reset button service */
+			if(HoldButtonIsPressed(&m_ResetButton))
+			{
 	#ifdef DEBUG_UI_BUTTONS
 			PrintfUART_DriverSendChar('R');
 	#endif /*DEBUG_UI_BUTTONS*/
 
-			/* Set up a timer to set and apply defaults */
-			if(holdTime < HOLD_RESET_BUTTON_TIMEOUT)
-				holdTime += BUTTONS_SAMPLE_PERIOD;
-		}
-		else
-		{
-			/* Abort timer */
-			if(holdTime != 0xFFFF) holdTime = 0;
-		}
-
-		/* Indication service ------------------------------------------------*/
-		if(indicateResetNetWorkSettings)
-		{
-			/* Show indication of reset network settings event */
-			SetStatusLED_ExtState(LED_StateFastBlink);
-		}
-		else
-		{
-			/* Show global synchronization state */
-			if(GetNTP_TimeStatus() == NTP_TimeValid)
-				SetStatusLED_ExtState(LED_StateBlink);
-			else SetStatusLED_ExtState(LED_StateOn);
-		}
-
-		/* Flashing service */
-		flashCount++;
-		if(flashCount % (FLASHING_PERIOD/(4*BUTTONS_SAMPLE_PERIOD)) == 0)
-		{
-			if(fastFlashing) fastFlashing = false;
-			else fastFlashing = true;
-		}
-		if(flashCount >= FLASHING_PERIOD/BUTTONS_SAMPLE_PERIOD)
-		{
-			flashCount = 0;
-			if(flashing) flashing = false;
-			else flashing = true;
-		}
-
-		/* Reset settings service --------------------------------------------*/
-		if(holdTime >= HOLD_RESET_BUTTON_TIMEOUT)
-		{
-			if(holdTime != 0xFFFF)
-			{
-				holdTime = 0xFFFF;
-
-				/* Reset network settings */
-				SetAndApplyDefaults();
-
-				/* Indicate this event */
-				indicateResetNetWorkSettings = 5000;
+				/* Set up a timer to set and apply defaults */
+				if(holdTime < HOLD_RESET_BUTTON_TIMEOUT)
+					holdTime += BUTTONS_SAMPLE_PERIOD;
 			}
-		}
+			else
+			{
+				/* Abort timer */
+				if(holdTime != 0xFFFF) holdTime = 0;
+			}
 
-		/* Service indication of reset network settings event */
-		if(indicateResetNetWorkSettings)
-		{
-			if(indicateResetNetWorkSettings >= BUTTONS_SAMPLE_PERIOD)
-				indicateResetNetWorkSettings -= BUTTONS_SAMPLE_PERIOD;
-			else indicateResetNetWorkSettings = 0;
+			/* Indication service --------------------------------------------*/
+			if(indicateResetNetWorkSettings)
+			{
+				/* Show indication of reset network settings event */
+				SetStatusLED_ExtState(LED_StateFastBlink);
+			}
+			else
+			{
+				/* Show global synchronization state */
+				if(GetNTP_TimeStatus() == NTP_TimeValid)
+					SetStatusLED_ExtState(LED_StateBlink);
+				else SetStatusLED_ExtState(LED_StateOn);
+			}
+
+			/* Flashing service */
+			flashCount++;
+			if(flashCount % (FLASHING_PERIOD/(4*BUTTONS_SAMPLE_PERIOD)) == 0)
+			{
+				if(fastFlashing) fastFlashing = false;
+				else fastFlashing = true;
+			}
+			if(flashCount >= FLASHING_PERIOD/BUTTONS_SAMPLE_PERIOD)
+			{
+				flashCount = 0;
+				if(flashing) flashing = false;
+				else flashing = true;
+			}
+
+			/* Reset settings service ----------------------------------------*/
+			if(holdTime >= HOLD_RESET_BUTTON_TIMEOUT)
+			{
+				if(holdTime != 0xFFFF)
+				{
+					holdTime = 0xFFFF;
+
+					/* Reset network settings */
+					SetAndApplyDefaults();
+
+					/* Indicate this event */
+					indicateResetNetWorkSettings = 5000;
+				}
+			}
+
+			/* Service indication of reset network settings event */
+			if(indicateResetNetWorkSettings)
+			{
+				if(indicateResetNetWorkSettings >= BUTTONS_SAMPLE_PERIOD)
+					indicateResetNetWorkSettings -= BUTTONS_SAMPLE_PERIOD;
+				else indicateResetNetWorkSettings = 0;
+			}
 		}
 
 		/* Wait for next cycle */

@@ -41,23 +41,7 @@ static const char str_hdr_3[] = ">\r\
 
 static const char str_html_enum_b[] = "\
     <a href=\"HTML_Main.html\">Home</a><br>\r\
-    <a href=\"HTML_DateTimeSettings.html\">Date and time settings</a><br>\r\
-    <a href=\"HTML_DisplaySettings.html\">Display settings</a><br>\r\
-    <a href=\"HTML_ScreenModesSettings.html\">Screen modes settings</a><br>\r\
-    <a href=\"HTML_WeatherSensorsSettings.html\">\
-Weather sensors settings</a><br>\r";
-
-#ifdef ALARM_INPUT
-	static const char str_html_alarm_inp_set[] = "\
-	<a href=\"HTML_AlarmInpSettings.html\">Alarm input settings</a><br>\r";
-#endif /*ALARM_INPUT*/
-
-#ifdef SCHEDULER
-	static const char str_html_schdlr_set[] = "\
-	<a href=\"HTML_SchedulerSettings.html\">Scheduler settings</a><br>\r";
-	static const char str_html_schdlr_tbl[] = "\
-	<a href=\"HTML_SchedulerTables.html\">Scheduler tables</a><br>\r";
-#endif /*SCHEDULER*/
+    <a href=\"HTML_DateTimeSettings.html\">Date and time settings</a><br>\r";
 
 static const char str_html_enum_1[] = "\
     <a href=\"HTML_NetworkSettings.html\">Network settings</a><br>\r\

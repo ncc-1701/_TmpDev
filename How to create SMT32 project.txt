@@ -1,0 +1,88 @@
+----- Workspace settings -------------------------------------------------------
+Key shortcuts and fonts:
+\.metadata\.plugins\org.eclipse.core.runtime\.settings\
+org.eclipse.ui.workbench.prefs
+
+Packages directory
+Preferences (workspace) -> Packages
+
+
+Add file (source or header) as link:
+PROJECT_LOC/../<file_name/>
+
+Optimization
+Optimize for debug/size
+Disable loop invariant move (for debug only)
+
+Warnings:
+  Enable all common warnings
+  Enable extra warnings
+
+Cross ARM C++ Compiler
+Optimization - all check
+
+Cross ARM C++ Linker
+General
+  Scripts files:
+mem.ld
+libs.ld
+sections.ld
++Do not use standard start files
++Remove unused sections
+Libraries
+  Library search path
+"../ldscripts"
+  Miscellaneous
++Use newlib-nano
+
+DEBUG/NDEBUG
+STM32F10X_MD_VL
+USE_STDPERIPH_DRIVER
+HSE_VALUE=8000000
+
+"../../../Drivers/STM32F10x_StdPeriph_Lib/inc"
+"../../../Drivers/STM32F10x_StdPeriph_Lib/inc/cmsis"
+"../../../Drivers/STM32F10x_StdPeriph_Lib/inc/stm32f1-stdperiph"
+
+"../Board"
+"../inc"
+"../../inc"
+"../../../Drivers/STM32F10x_StdPeriph_Lib/inc"
+"../../../Drivers/STM32F10x_StdPeriph_Lib/inc/cmsis"
+"../../../Drivers/STM32F10x_StdPeriph_Lib/inc/stm32f1-stdperiph"
+"../../../Libraries/Inputs"
+"../../../Libraries/LED_Display"
+"../../../Libraries/RTC"
+"../../../Libraries/Thermo"
+"../../../Libraries/Utils"
+
+----- Debug and run configure --------------------------------------------------
+Build step for release ---------------------------------------------------------
+rm ${ProjName}.hex
+Remove hex firmware
+
+arm-none-eabi-objcopy -O ihex "${ProjName}.elf" "${ProjName}.hex"
+Generate hex firmware
+
+For project OpenOCD debugging:
+
+Debugger -> Congig options:
+-f interface/stlink.cfg -f target/stm32f4x.cfg
+
+
+External tool configuration ----------------------------------------------------
+name: Flash MCU
+location: ${project_loc}/Release/${project_name}.sh
+Working Directory: ${project_loc}/Release/
+
+reset_config none separate
+reset_config srst_only srst_nogate
+
+# Select interface and MCU
+source [find interface/stlink-v2.cfg]
+source [find target/stm32f1x.cfg]
+
+sh -c "st-flash write /home/user/Development/ClockSystems/ClockNG/Release/ClockNG.bin 0x8000000"
+
+
+

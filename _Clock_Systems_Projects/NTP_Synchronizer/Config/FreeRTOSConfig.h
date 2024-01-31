@@ -122,6 +122,9 @@
 #define configUSE_CO_ROUTINES					0
 #define configMAX_CO_ROUTINE_PRIORITIES			(2)
 
+/* The following flag must be enabled only when using newlib */
+#define configUSE_NEWLIB_REENTRANT 				1
+
 /* FreeRTOS tasks priorities for applications */
 #define RTC_APP_TASK_PRIORITY 		(tskIDLE_PRIORITY + 3)
 #define TRS_SNC_PRT_APP_TASK_PRIORITY (tskIDLE_PRIORITY + 3)
